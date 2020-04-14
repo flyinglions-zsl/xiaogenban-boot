@@ -31,9 +31,10 @@ spring:
       # 数据库连接超时时间,默认30秒，即30000
       connection-timeout: 30000
       connection-test-query: SELECT 1
-
-
-
+  devtools:
+    restart:
+      exclude: static/**,public/**
+      log-condition-evaluation-delta: false
 
 mybatis-plus:
   global-config:
@@ -45,4 +46,10 @@ mybatis-plus:
         logic-delete-value: 1 # 逻辑已删除值(默认为 1)
         logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
   mapper-locations: classpath:/mapper/*.xml
-  type-aliases-package: com.xgb.
+  type-aliases-package: com.xgb.boot.entity
+  configuration:
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImp
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    #map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    #call-setters-on-nulls: true
