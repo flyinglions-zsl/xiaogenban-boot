@@ -65,8 +65,8 @@ public class DataSourceConfig {
         hikariDataSource.setPoolName("hikariPool");//连接池名称*/
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(hikariDataSource);
-        Resource []resources = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*.xml");
-        factoryBean.setMapperLocations(resources);
+        //Resource []resources = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*.xml");
+        //factoryBean.setMapperLocations(resources);
         factoryBean.setConfigLocation(new DefaultResourceLoader().getResource("classpath:mybatisplus-config.xml"));
         sqlSessionFactory = factoryBean.getObject();
         logger.info("Datasource init finish");

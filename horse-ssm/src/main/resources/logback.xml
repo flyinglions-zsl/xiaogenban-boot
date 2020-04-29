@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <jmxConfigurator/>
+
+    <!-- Configure the Sentry appender, overriding the logging threshold to the WARN level -->
+    <appender name="SENTRY" class="com.getsentry.raven.logback.SentryAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+    <!-- Enable the Console and Sentry appenders, Console is provided as an example
+         of a non-Raven logger that is set to a different logging threshold -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="SENTRY" />
+    </root>
+</configuration>
