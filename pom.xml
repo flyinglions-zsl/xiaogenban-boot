@@ -13,6 +13,7 @@
         <module>horse-ssm</module>
         <module>horse-domain</module>
         <module>horse-common</module>
+        <module>horse-config-server</module>
     </modules>
 
     <parent>
@@ -30,10 +31,10 @@
     </properties>
 
     <dependencies>
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>

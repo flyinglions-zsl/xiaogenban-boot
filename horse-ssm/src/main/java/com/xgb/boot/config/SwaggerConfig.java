@@ -19,7 +19,7 @@ public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .host("localhost:6666")
+                .host("localhost:9999")
                 .apiInfo(new ApiInfoBuilder()
                         .description("小跟班后台管理系统")
                         .title("小跟班后台管理系统")
